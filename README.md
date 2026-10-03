@@ -69,6 +69,16 @@ Menu options:
 |----------|---------|-------------|
 | `PI_PROXY_URL` | `http://127.0.0.1:7890` | Override proxy URL (takes precedence over config) |
 
+## Development
+
+```bash
+npm ci
+npm test          # node --test
+bun run test:bun  # bun test
+```
+
+The suite spawns the harness under both Node and Bun against a fake origin and a fake proxy (handles both forward and CONNECT forms), asserting per-rule routing, fallback and the disabled passthrough on each runtime.
+
 ## License
 
 MIT
