@@ -12,6 +12,8 @@ Monkey-patches `globalThis.fetch` to route requests based on domain rules:
 
 AI API calls (OpenAI, Anthropic, etc.) stay direct. Only web content fetching gets proxy fallback when network is unreachable.
 
+Routes through the proxy differently per runtime: Node uses undici's `dispatcher` (`ProxyAgent`), Bun uses its native `proxy` fetch option (Bun ignores `dispatcher`).
+
 ## Install
 
 ```bash
